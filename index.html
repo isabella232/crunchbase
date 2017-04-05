@@ -33,6 +33,12 @@ body{
    color:    #ffffff;
 }
 
+a{
+    text-decoration: none;
+    font-style: normal;
+    color: initial;
+}
+
 h4{
     font-weight: 400;
     margin: 0px;
@@ -144,7 +150,7 @@ h4{
     background-color: rgba(241, 241, 241, 0.35);
 }
 .aa-suggestions-category{
-    font-weight: 300;
+    font-weight: 600;
     padding:8px 16px;
     border-bottom: 1px solid rgba(228, 228, 228, 0.6);
 }
@@ -191,13 +197,16 @@ em{
                             let img = !!suggestion.logo_url_30_30 ? suggestion.logo_url_30_30 :'https://res.cloudinary.com/crunchbase-production/image/upload/w_30,h_30,c_pad,g_center/v1429653954/cb-default-image-98x98_cq2r4q.png';
                             let type = suggestion.type;
                             let desc = suggestion.description;
-                            return `<div class="result">
+                            let url = suggestion.url;
+                            return `<a href="http://crunchbase.com${url}" target="_blank">
+                            <div class="result">
                                 <img class="thumb" src="${img}"/>
                                 <div class="content">
                                     <h4>${name}</h4>
                                     <span>${type} - ${desc}</span>
                                 </div>
-                            </div>`
+                            </div>
+                            </a>`
                         }
                     }
                 },
@@ -215,13 +224,16 @@ em{
                                 let type = suggestion.type;
                                 let title = !!suggestion._highlightResult.title ? suggestion._highlightResult.title.value : suggestion.title;
                                 let company = !!suggestion._highlightResult.organization_name ? suggestion._highlightResult.organization_name.value : suggestion.organization_name;
-                                return `<div class="result">
-                                    <img class="thumb" src="${img}"/>
-                                    <div class="content">
-                                        <h4>${name}</h4>
-                                        <span>${type} - ${title} @ ${company}</span>
+                                let url = suggestion.url;
+                                return `<a href="http://crunchbase.com${url}" target="_blank">
+                                    <div class="result">
+                                        <img class="thumb" src="${img}"/>
+                                        <div class="content">
+                                            <h4>${name}</h4>
+                                            <span>${type} - ${title} @ ${company}</span>
+                                        </div>
                                     </div>
-                                </div>`
+                                </a>`
                             }
                         }
                     },
@@ -239,13 +251,16 @@ em{
                                     let img = !!suggestion.logo_url_30_30 ? suggestion.logo_url_30_30 :'https://res.cloudinary.com/crunchbase-production/image/upload/w_30,h_30,c_pad,g_center/v1429653954/cb-default-image-98x98_cq2r4q.png';
                                     let type = suggestion.type;
                                     let desc = suggestion.description;
-                                    return `<div class="result">
-                                        <img class="thumb" src="${img}"/>
-                                        <div class="content">
-                                            <h4>${name}</h4>
-                                            <span>${type} - ${desc}</span>
+                                    let url = suggestion.url;
+                                    return `<a href="http://crunchbase.com${url}" target="_blank">
+                                        <div class="result">
+                                            <img class="thumb" src="${img}"/>
+                                            <div class="content">
+                                                <h4>${name}</h4>
+                                                <span>${type} - ${desc}</span>
+                                            </div>
                                         </div>
-                                    </div>`
+                                    </a>`
                                 }
                             }
                         },
@@ -262,13 +277,16 @@ em{
                                         let img = !!suggestion.logo_url_30_30 ? suggestion.logo_url_30_30 :'https://res.cloudinary.com/crunchbase-production/image/upload/w_30,h_30,c_pad,g_center/v1429653954/cb-default-image-98x98_cq2r4q.png';
                                         let type = suggestion.type;
                                         let desc = suggestion.description;
-                                        return `<div class="result">
-                                            <img class="thumb" src="${img}"/>
-                                            <div class="content">
-                                                <h4>${name}</h4>
-                                                <span>${type} - ${desc}</span>
+                                        let url = suggestion.url;
+                                        return `<a href="http://crunchbase.com${url}" target="_blank">
+                                            <div class="result">
+                                                <img class="thumb" src="${img}"/>
+                                                <div class="content">
+                                                    <h4>${name}</h4>
+                                                    <span>${type} - ${desc}</span>
+                                                </div>
                                             </div>
-                                        </div>`
+                                        </a>`
                                     }
                                 }
                             }
